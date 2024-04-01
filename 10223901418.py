@@ -35,13 +35,19 @@ with st.form("my_form2"):
     if uploaded_file is not None:
     # 读取文件内容
         file_contents = uploaded_file.read()
-        bytes_data = uploaded_file.getvalue()
-        st.write(file_contents.decode("utf-8"))
-
+        if file_contents.endswith('.csv'):
+            df = pd.read_csv(uploaded_file)
+        elif file_contents.endswith('.xls') or file_name.endswith('.xlsx'):
+            df = pd.read_excel(uploaded_file)
+        elif file_contents.endswith('.txt'):
+            st.write(file_contents.decode("utf-8"))
+        else:
+                return 'Unknown'
+        
+    
     
 #读取csv数据以dataframe显示
-url_data = "https://EcnuGISChaser.github.io/gis_development/data/csj_pm25.csv"
-df = pd.read_csv(url_data,encoding="utf8")
+
 
 #创建expander容器
 with st.expander("显示原始数据"):
