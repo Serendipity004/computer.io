@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-import DataFrame as df
 
 #添加标题
 st.title('社交媒体情感分析平台')
