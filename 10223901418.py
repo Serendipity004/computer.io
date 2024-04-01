@@ -3,12 +3,6 @@ import streamlit as st
 
 #添加标题
 st.title('社交媒体情感分析平台')
-    
-#以地图显示
-df1 = pd.read_csv(url_data,usecols=["经度","纬度"],encoding="utf8")
-df1["lon"] = df1["经度"]
-df1["lat"] = df1["纬度"]
-#st.map(df1)
 
 #创建表单
 with st.form("my_form"):
