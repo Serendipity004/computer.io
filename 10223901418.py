@@ -13,7 +13,7 @@ with st.form("my_form"):
     gender1 = st.selectbox('性别',gender)
     
 #第二个“年龄”
-    age1 = st.number_input('年龄',min_value=0,max_value=150,value='0',format="%d")
+    age1 = st.number_input('年龄',min_value=0,max_value=150,value=0,format="%d")
     
 #一个Text_input昵称
     txt = st.text_input('输入用户名',value="",type="default") #type为缺省
