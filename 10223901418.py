@@ -11,10 +11,6 @@ def check_file_type(file_name):
     else:
         return 'Unknown'
 
-file_name = 'example.csv'  # 替换为实际的文件名
-file_type = check_file_type(file_name)
-print(f'The file type is: {file_type}')
-
 #添加标题
 st.title('社交媒体情感分析平台')
 
