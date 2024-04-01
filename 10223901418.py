@@ -26,7 +26,7 @@ with st.form("my_form2"):
     st.header("数据收集表单")
     
 #一个Text_input昵称
-    txt = st.text_area('曾发表过文案',value="",type="default") #type为缺省
+    txt = st.text_input('曾发表过文案',value="",type="default") #type为缺省
     
 #一个表单提交按钮form_submit_button
     submit_button = st.form_submit_button('数据上传')
