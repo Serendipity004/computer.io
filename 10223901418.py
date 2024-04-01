@@ -37,5 +37,7 @@ with st.form("my_form2"):
         file_contents = uploaded_file.read()
         if uploaded_file.name.endswith('.csv'):
             df = pd.read_csv(uploaded_file)
+            print(df)
         elif uploaded_file.name.endswith('.xlsx'):
             df = pd.read_excel(uploaded_file)
+            print(df)
