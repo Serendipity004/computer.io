@@ -35,7 +35,9 @@ with st.form("my_form2"):
     if uploaded_file is not None:
     # 读取文件内容
         file_contents = uploaded_file.read()
-        st.write(file_contents)
+        bytes_data = uploaded_file.getvalue()
+        st.write(file_contents.decode("utf-8"))
+
     
 #读取csv数据以dataframe显示
 url_data = "https://EcnuGISChaser.github.io/gis_development/data/csj_pm25.csv"
