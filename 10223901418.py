@@ -23,7 +23,7 @@ with st.form("my_form"):
 #一个表单提交按钮form_submit_button
     submit_button = st.form_submit_button('提交')
 
-with st.form("my_form"):
+with st.form("my_form2"):
     st.header("数据收集表单")
     txt = st.text_input('发表过文案',value="",type="default")
     submit_button = st.form_submit_button('数据上传')
