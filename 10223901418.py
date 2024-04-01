@@ -39,6 +39,6 @@ with st.form("my_form2"):
             df = pd.read_csv(uploaded_file)
         elif uploaded_file.name.endswith('.xlsx') or uploaded_file.name.endswith('.xls'):
             df = pd.read_excel(uploaded_file)
-    if st.button:
+    if st.button('数据上传'):
         st.dataframe(df)
 
