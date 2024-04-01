@@ -30,14 +30,18 @@ with st.form("my_form2"):
     
 #一个表单提交按钮form_submit_button
     submit_button2 = st.form_submit_button('数据上传')
-    uploaded_file = st.file_uploader("上传文件", type=['txt', 'csv', 'xlsx'])
+    uploaded_file = st.file_uploader("上传文件", type=['txt'])
     # 处理上传的文件
     if (uploaded_file is not None) and (submit_button2):
-    # 读取文件内容
+    #读取文件内容
         file_contents = uploaded_file.read()
         if uploaded_file.name.endswith('.csv'):
             df = pd.read_csv(uploaded_file)
         elif uploaded_file.name.endswith('.xlsx') or uploaded_file.name.endswith('.xls'):
             df = pd.read_excel(uploaded_file)
-        st.dataframe(df)
+        else:
+            bytes_data = uploaded_file.getvalue()
+            st.write(bytes_data.decode("utf-8"))
+            #st.dataframe(df)
+    
 
