@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import DataFrame as df
 
 #添加标题
 st.title('社交媒体情感分析平台')
@@ -39,5 +40,4 @@ with st.form("my_form2"):
             df = pd.read_csv(uploaded_file)
         elif uploaded_file.name.endswith('.xlsx') or uploaded_file.name.endswith('.xls'):
             df = pd.read_excel(uploaded_file)
-        print(file_contents)
-    
+    df.head()
