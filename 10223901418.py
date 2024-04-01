@@ -8,13 +8,11 @@ st.title('社交媒体情感分析平台')
 with st.form("my_form"):
     st.header("基本信息收集表单")
 
-#两个selectbox
 #第一个“性别”
     gender = list(["男","女"])
     gender1 = st.selectbox('性别',gender)
     
 #第二个“年龄”
-    age = list(['>18','<18'])
     age1 = st.number_input('年龄',min_value=0,max_value=150,value=0,format="%d")
     
 #一个Text_input昵称
@@ -32,7 +30,7 @@ with st.form("my_form2"):
         # 读取文件内容
         file_contents = uploaded_file.read()
         st.write(file_contents)
-    submit_button = st.form_submit_button('数据上传')
+    submit_button2 = st.form_submit_button('数据上传')
     
 #读取csv数据以dataframe显示
 url_data = "https://EcnuGISChaser.github.io/gis_development/data/csj_pm25.csv"
