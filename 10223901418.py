@@ -26,17 +26,7 @@ with st.form("my_form2"):
     txt = st.text_area('发表过文案',value="",type="default")
     st.form_submit_button('数据上传')
     
-    uploaded_file = st.file_uploader("上传文件", type=['txt', 'csv', 'xlsx'])
-    # 处理上传的文件
-    #if uploaded_file is not None:
-        # 读取文件内容
-        #file_contents = uploaded_file.read()
-        #st.write(file_contents)
-    if uploaded_file is not None:
-        bytes_data = uploaded_file.getvalue()
-        st.write(bytes_data.decode("utf-8"))
-
-    submit_button3 = st.form_submit_button('数据上传')
+    
     
 #读取csv数据以dataframe显示
 url_data = "https://EcnuGISChaser.github.io/gis_development/data/csj_pm25.csv"
