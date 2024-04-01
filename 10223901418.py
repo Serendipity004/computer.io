@@ -30,7 +30,7 @@ with st.form("my_form2"):
         # 读取文件内容
         file_contents = uploaded_file.read()
         st.write(file_contents)
-    submit_button2 = st.form_submit_button('数据上传')
+        submit_button2 = st.form_submit_button('数据上传')
     
 #读取csv数据以dataframe显示
 url_data = "https://EcnuGISChaser.github.io/gis_development/data/csj_pm25.csv"
