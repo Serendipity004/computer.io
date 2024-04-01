@@ -19,7 +19,7 @@ with st.form("my_form"):
     txt = st.text_input('输入用户名',value="",type="default") #type为缺省
     
 #一个表单提交按钮form_submit_button
-    submit_button = st.form_submit_button('提交')
+    submit_button1 = st.form_submit_button('提交')
     
 
 with st.form("my_form2"):
@@ -29,16 +29,15 @@ with st.form("my_form2"):
     txt = st.text_input('曾发表过文案',value="",type="default") #type为缺省
     
 #一个表单提交按钮form_submit_button
-    submit_button = st.form_submit_button('数据上传')
+    submit_button2 = st.form_submit_button('数据上传')
     uploaded_file = st.file_uploader("上传文件", type=['txt', 'csv', 'xlsx'])
     # 处理上传的文件
-    if uploaded_file is not None:
+    if (uploaded_file is not None) and (submit_button2):
     # 读取文件内容
         file_contents = uploaded_file.read()
         if uploaded_file.name.endswith('.csv'):
             df = pd.read_csv(uploaded_file)
         elif uploaded_file.name.endswith('.xlsx') or uploaded_file.name.endswith('.xls'):
             df = pd.read_excel(uploaded_file)
-        if submit_button:
-            st.dataframe(df)
+        st.dataframe(df)
 
