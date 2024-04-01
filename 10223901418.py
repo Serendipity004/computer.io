@@ -27,13 +27,12 @@ with st.form("my_form2"):
     st.header("数据收集表单")
     txt = st.text_area('发表过文案',value="",type="default")
     uploaded_file = st.file_uploader("上传文件", type=['txt', 'csv', 'xlsx'])
-    submit_button = st.form_submit_button('数据上传')
     # 处理上传的文件
     if uploaded_file is not None:
         # 读取文件内容
         file_contents = uploaded_file.read()
         st.write(file_contents)
-    
+    submit_button = st.form_submit_button('数据上传')
     
 #读取csv数据以dataframe显示
 url_data = "https://EcnuGISChaser.github.io/gis_development/data/csj_pm25.csv"
