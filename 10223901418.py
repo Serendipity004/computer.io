@@ -41,8 +41,6 @@ with st.form("my_form2"):
             df = pd.read_excel(uploaded_file)
         elif file_contents.endswith('.txt'):
             st.write(file_contents.decode("utf-8"))
-        else:
-                return 'Unknown'
         
     
     
