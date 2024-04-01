@@ -42,5 +42,5 @@ with st.form("my_form2"):
         
 
 #创建expander容器
-with st.expander("显示原始数据"):
-    st.dataframe(df)
+#with st.expander("显示原始数据"):
+    #st.dataframe(df)
