@@ -29,22 +29,6 @@ with st.form("my_form"):
 #一个表单提交按钮form_submit_button
     submit_button = st.form_submit_button('提交')
 
-    if submit_button:
-        column_name = df.columns[df.columns.str.contains(name1)][0]
-        if name2 == "<":
-            condition = df[column_name] < float(txt)
-        elif name2 == ">":
-            condition = df[column_name] > float(txt)
-        
-        filtered_df = df[condition]
-        st.header("共有{}条记录".format(filtered_df.shape[0]))
-        st.dataframe(filtered_df)
-        
-        df1 = filtered_df[['经度', '纬度']]  # 选择经度和纬度列
-        df1["lon"] = df1["经度"]
-        df1["lat"] = df1["纬度"]
-        st.map(df1)
-
 with st.form("my_form"):
     st.header("数据收集表单")
     txt = st.text_input('发表过文案',value="",type="default")
