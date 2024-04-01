@@ -26,8 +26,8 @@ with st.form("my_form"):
 with st.form("my_form2"):
     st.header("数据收集表单")
     txt = st.text_area('发表过文案',value="",type="default")
-    submit_button = st.form_submit_button('数据上传')
     uploaded_file = st.file_uploader("上传文件", type=['txt', 'csv', 'xlsx'])
+    submit_button = st.form_submit_button('数据上传')
     # 处理上传的文件
     if uploaded_file is not None:
         # 读取文件内容
