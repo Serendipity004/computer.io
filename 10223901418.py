@@ -1,6 +1,20 @@
 import pandas as pd
 import streamlit as st
 
+def check_file_type(file_name):
+    if file_name.endswith('.csv'):
+        df = pd.read_csv(uploaded_file)
+    elif file_name.endswith('.xls') or file_name.endswith('.xlsx'):
+        df = pd.read_excel(uploaded_file)
+    elif file_name.endswith('.txt'):
+        st.write(file_contents.decode("utf-8"))
+    else:
+        return 'Unknown'
+
+file_name = 'example.csv'  # 替换为实际的文件名
+file_type = check_file_type(file_name)
+print(f'The file type is: {file_type}')
+
 #添加标题
 st.title('社交媒体情感分析平台')
 
@@ -35,17 +49,8 @@ with st.form("my_form2"):
     if uploaded_file is not None:
     # 读取文件内容
         file_contents = uploaded_file.read()
-        if file_contents.endswith('.csv'):
-            df = pd.read_csv(uploaded_file)
-        elif file_contents.endswith('.xls') or file_name.endswith('.xlsx'):
-            df = pd.read_excel(uploaded_file)
-        elif file_contents.endswith('.txt'):
-            st.write(file_contents.decode("utf-8"))
+        check_file_type(file_contents)
         
-    
-    
-#读取csv数据以dataframe显示
-
 
 #创建expander容器
 with st.expander("显示原始数据"):
