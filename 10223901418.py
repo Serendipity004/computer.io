@@ -1,16 +1,6 @@
 import pandas as pd
 import streamlit as st
 
-def check_file_type(file_name):
-    if file_name.endswith('.csv'):
-        df = pd.read_csv(uploaded_file)
-    elif file_name.endswith('.xls') or file_name.endswith('.xlsx'):
-        df = pd.read_excel(uploaded_file)
-    elif file_name.endswith('.txt'):
-        st.write(file_contents.decode("utf-8"))
-    else:
-        return 'Unknown'
-
 #添加标题
 st.title('社交媒体情感分析平台')
 
@@ -45,7 +35,10 @@ with st.form("my_form2"):
     if uploaded_file is not None:
     # 读取文件内容
         file_contents = uploaded_file.read()
-        check_file_type(file_contents)
+        if uploaded_file.name.endswith('.csv'):
+            df = pd.read_csv(uploaded_file)
+        elif uploaded_file.name.endswith('.xlsx'):
+            df = pd.read_excel(uploaded_file)
         
 
 #创建expander容器
